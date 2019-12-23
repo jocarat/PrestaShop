@@ -120,7 +120,7 @@ elseif (Tools::isSubmit('getAvailableFields') && Tools::isSubmit('entity')) {
  *
  * -> Duplicated in Symfony
  */
-elseif (Tools::isSubmit('getNotifications')) {
+elseif (Configuration::get('PS_ADMINREFRESH_NOTIFICATION') && Tools::isSubmit('getNotifications')) {
     $notification = new Notification();
     echo json_encode($notification->getLastElements());
 }
